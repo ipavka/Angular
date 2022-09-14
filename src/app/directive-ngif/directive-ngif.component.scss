@@ -1,0 +1,17 @@
+@import 'src/styles';
+
+.directNgIfBlock {
+  @include divContainer();
+  & h1 {
+    text-decoration: underline;
+    color: #1976d2;
+  }
+  & span {
+    font-size: 18px;
+  }
+  button {
+    @include myButton();
+    margin-bottom: 20px;
+  }
+
+}

@@ -1,0 +1,17 @@
+<div class="directNgIfBlock">
+  <h1>Directive NgIf</h1>
+  <div>
+    <button (click)="isLoading = !isLoading">{{ isLoading ? 'hide' : 'show' }}</button>
+  </div>
+
+  <div *ngIf="isLoading; else elseBlock">
+    <h2>Loading...</h2>
+  </div>
+
+  <ng-template #elseBlock>
+    <div *ngFor="let el of students">
+      <span><b>Name: </b>{{ el.name }} </span>
+      <span><b>Age: </b>{{ el.age }} </span>
+    </div>
+  </ng-template>
+</div>

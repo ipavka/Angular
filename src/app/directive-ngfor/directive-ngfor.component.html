@@ -1,0 +1,20 @@
+<div class="directNgforBlock">
+  <h1>Directive Ngfor</h1>
+  <div *ngFor="let el of posts; index as ind; count as co; even as ev">
+    <span><b>index:</b> {{ ind }} </span>
+    <span><b>count:</b> {{ co }} </span>
+    <span><b>even:</b> {{ ev }} </span>
+    <span><b>UserId</b> {{ el.userId }} </span>
+    <span><b>Title:</b> {{ el.title }} </span>
+    <span><b>Body:</b> {{ el.body }} </span>
+  </div>
+  <div>
+    <h2>Complex</h2>
+    <div *ngFor="let el of lessons">
+      <span><b>ID: </b>{{ el.id }} <b>Title: </b>{{ el.title }}</span>
+      <div *ngFor="let grade of el.weekGrades">
+        <span><b>Grade ID: </b>{{ grade.id }} <b>Grade: </b>{{ grade.gradeItem }}</span>
+      </div>
+    </div>
+  </div>
+</div>

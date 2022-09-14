@@ -1,0 +1,15 @@
+@import 'src/styles';
+
+.outputChildBlock {
+  button {
+    @include myButton();
+  }
+  input {
+    padding: 8px;
+    border-radius: 12px;
+  }
+  & h3 {
+    text-decoration: underline;
+    color: #1976d2;
+  }
+}

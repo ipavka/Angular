@@ -15,6 +15,7 @@ import { InputChildComponent } from './input-comp/input-child/input-child.compon
 import { OutputParentComponent } from './output-parent/output-parent.component';
 import { OutputChildComponent } from './output-parent/output-child/output-child.component';
 import { DirectiveNgforComponent } from './directive-ngfor/directive-ngfor.component';
+import { DirectiveNgIfComponent } from './directive-ngif/directive-ngif.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { DirectiveNgforComponent } from './directive-ngfor/directive-ngfor.compo
     OutputParentComponent,
     OutputChildComponent,
     DirectiveNgforComponent,
+    DirectiveNgIfComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
