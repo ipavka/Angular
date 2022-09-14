@@ -14,4 +14,10 @@
       <span><b>Age: </b>{{ el.age }} </span>
     </div>
   </ng-template>
+
+  <ng-container *ngIf="!isLoading">
+    <h2>One Student</h2>
+    <span><b>Name: </b>{{ student.name }} </span>
+    <span><b>Age: </b>{{ student.name }} </span>
+  </ng-container>
 </div>

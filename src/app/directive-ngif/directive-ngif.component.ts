@@ -13,6 +13,7 @@ interface Students {
 })
 export class DirectiveNgIfComponent {
   isLoading = true;
+  student = { id: 1, name: 'Max', age: 8 };
   students: Students[] = [
     { id: 1, name: 'James', age: 8 },
     { id: 2, name: 'Robert', age: 18 },
