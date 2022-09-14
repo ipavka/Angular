@@ -1,0 +1,10 @@
+<div class="inputCompBlock">
+  <h1>@Input</h1>
+  <h3>
+    Parent:
+    <p>Name: {{ name }}</p>
+    <p>SureName: {{ sureName }}</p>
+    <p>City: {{ address.city }}</p>
+  </h3>
+  <ins-input-child [sureName]="sureName" [address]="address"></ins-input-child>
+</div>

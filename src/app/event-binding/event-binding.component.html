@@ -1,0 +1,11 @@
+<div class="eventBinBlock">
+  <h1>Event Binding</h1>
+  <h2>Count: {{ appCount }}</h2>
+  <button (click)="changeHandler()">Change title</button>
+  <p></p>
+  <h2>Input Text: {{ text }}</h2>
+  <input type="text" (input)="changeInputHandler($event)" />
+  <p></p>
+  <h2>Keyup Input: {{ keyupText }}</h2>
+  <input type="text" (keyup.enter)="changeKeyupInputHandler($event)" />
+</div>

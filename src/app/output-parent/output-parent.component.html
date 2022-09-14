@@ -1,0 +1,17 @@
+<div class="outputParentBlock">
+  <h1>@Output Parent</h1>
+  <h3>
+    Array Grads:
+    <p>{{ gradesArr | json }}</p>
+  </h3>
+  <h3>
+    Grade from Child:
+    <p>English: {{ english }}</p>
+    <p>Math: {{ math }}</p>
+    <p>Physics: {{ physics }}</p>
+  </h3>
+  <ins-output-child
+    (sendInputGradeEvent)="getArrGrade($event)"
+    (sendGradeEvent)="getGrade($event)"
+  ></ins-output-child>
+</div>

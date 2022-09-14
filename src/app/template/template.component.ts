@@ -1,24 +1,25 @@
-import { Component } from '@angular/core'
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'ins-template',
   template: `
-    <h1>Template</h1>
-    <p class="compNew3Title">comp-new3 works!</p>
-    <hr />
+    <div class="tempCompBlock">
+      <h1>Template</h1>
+    </div>
   `,
   styles: [
     `
-      .compNew3Title {
-        color: gold;
-        font-size: 30px;
+      .tempCompBlock {
         &:hover {
           color: rebeccapurple;
+        }
+
+        & h1 {
+          text-decoration: underline;
+          color: #1976d2;
         }
       }
     `,
   ],
 })
-export class TemplateComponent {
-  isLoading = 'false'
-}
+export class TemplateComponent {}

@@ -1,9 +1,8 @@
 @import 'src/styles';
 
-.newCompTitle {
+.outputParentBlock {
   @include divContainer();
   width: 100%;
-
   & h1 {
     text-decoration: underline;
     color: #1976d2;

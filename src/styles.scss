@@ -1,4 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  background: #1976d2;
+  background: #efefef;
+}
+
+@mixin divContainer() {
+  display: flex;
+  min-width: 800px;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+@mixin myButton() {
+  padding: 5px 25px;
+  font-size: 18px;
+  border-radius: 10px;
 }

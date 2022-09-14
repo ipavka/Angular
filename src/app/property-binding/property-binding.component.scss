@@ -1,0 +1,9 @@
+@import 'src/styles';
+
+.proBinBlock {
+  @include divContainer();
+  width: 100%;
+  button {
+    @include myButton();
+  }
+}
