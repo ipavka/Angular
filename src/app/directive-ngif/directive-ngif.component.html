@@ -1,7 +1,7 @@
 <div class="directNgIfBlock">
   <h1>Directive NgIf</h1>
   <div>
-    <button (click)="isLoading = !isLoading">{{ isLoading ? 'hide' : 'show' }}</button>
+    <button (click)="isLoading = !isLoading">{{ isLoading ? 'show' : 'hide' }}</button>
   </div>
 
   <div *ngIf="isLoading; else elseBlock">

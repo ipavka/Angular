@@ -1,0 +1,10 @@
+<div class="directNgSwitchBlock">
+  <h1>Directive NgSwitch</h1>
+  <div [ngSwitch]="value">
+    <h3 *ngSwitchCase="'1'">One</h3>
+    <h3 *ngSwitchCase="'2'">Two</h3>
+    <h3 *ngSwitchCase="'3'">Three</h3>
+    <h3 *ngSwitchDefault>Unknown value</h3>
+  </div>
+  <input type="text" [(ngModel)]="value" />
+</div>

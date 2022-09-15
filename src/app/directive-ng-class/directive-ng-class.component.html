@@ -1,0 +1,9 @@
+<div class="directNgClassBlock">
+  <h1>Directive NgClass</h1>
+  <div>
+    <h2 [ngClass]="'success default'">NgClass</h2>
+    <h2 [ngClass]="{ default: true, success: isSuccess, error: !isSuccess }">NgClass_1</h2>
+    <h2 [ngClass]="{ 'default success': isSuccess }">NgClass_2</h2>
+    <h2 class="error">NgClass</h2>
+  </div>
+</div>
