@@ -19,6 +19,7 @@ import { DirectiveNgIfComponent } from './directive-ngif/directive-ngif.componen
 import { DirectiveNgSwitchComponent } from './directive-ng-switch/directive-ng-switch.component';
 import { DirectiveNgClassComponent } from './directive-ng-class/directive-ng-class.component';
 import { DirectiveNgStyleComponent } from './directive-ng-style/directive-ng-style.component';
+import { TaskNgDirectiveComponent } from './task-ng-derective/task-ng-directive.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { DirectiveNgStyleComponent } from './directive-ng-style/directive-ng-sty
     DirectiveNgSwitchComponent,
     DirectiveNgClassComponent,
     DirectiveNgStyleComponent,
+    TaskNgDirectiveComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
