@@ -23,6 +23,8 @@ import { TaskNgDirectiveComponent } from './task-ng-derective/task-ng-directive.
 import { PipeComponent } from './pipe/pipe.component';
 import { ForServicesComponent } from './for-services/for-services.component';
 import { ForServices1Component } from './for-services1/for-services1.component';
+import { TodosComponent } from './todos/todos.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -46,8 +48,9 @@ import { ForServices1Component } from './for-services1/for-services1.component';
     PipeComponent,
     ForServicesComponent,
     ForServices1Component,
+    TodosComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

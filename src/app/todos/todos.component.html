@@ -1,0 +1,14 @@
+<div class="todosBlock">
+  <h1>ToDo</h1>
+  <div class="inputWrapper">
+    <input type="text" [(ngModel)]="inputValue" />
+    <button (click)="addTodoHandler()">add</button>
+  </div>
+
+  <div *ngFor="let el of todos" class="container">
+    <div class="item">- {{ el.title }}</div>
+    <div class="buttonWrapper">
+      <button (click)="deleteHandler(el.id)">X</button>
+    </div>
+  </div>
+</div>
