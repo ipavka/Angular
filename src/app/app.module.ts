@@ -20,6 +20,9 @@ import { DirectiveNgSwitchComponent } from './directive-ng-switch/directive-ng-s
 import { DirectiveNgClassComponent } from './directive-ng-class/directive-ng-class.component';
 import { DirectiveNgStyleComponent } from './directive-ng-style/directive-ng-style.component';
 import { TaskNgDirectiveComponent } from './task-ng-derective/task-ng-directive.component';
+import { PipeComponent } from './pipe/pipe.component';
+import { ForServicesComponent } from './for-services/for-services.component';
+import { ForServices1Component } from './for-services1/for-services1.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,9 @@ import { TaskNgDirectiveComponent } from './task-ng-derective/task-ng-directive.
     DirectiveNgClassComponent,
     DirectiveNgStyleComponent,
     TaskNgDirectiveComponent,
+    PipeComponent,
+    ForServicesComponent,
+    ForServices1Component,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
