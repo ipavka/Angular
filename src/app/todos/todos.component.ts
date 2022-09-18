@@ -1,20 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { environment } from '../../environments/environment';
-
-interface Todo {
-  id: string;
-  addedDate: string;
-  order: number;
-  title: string;
-}
-
-export interface BaseResponse<T = {}> {
-  data: T;
-  messages: string[];
-  fieldsErrors: string[];
-  resultCode: number;
-}
+import { Todo, TodosService } from '../services/todos.service';
 
 @Component({
   selector: 'ins-todos',
@@ -23,45 +8,31 @@ export interface BaseResponse<T = {}> {
 })
 export class TodosComponent implements OnInit {
   todos: Todo[] = [];
-  httpOptions = {
-    headers: {
-      'api-key': environment.apiKey,
-    },
-    withCredentials: true,
-  };
   inputValue = '';
 
-  constructor(private http: HttpClient) {}
+  constructor(private todoService: TodosService) {}
 
   ngOnInit(): void {
     this.getTodos();
   }
 
-  private getTodos() {
-    this.http.get<Todo[]>(environment.url, this.httpOptions).subscribe(res => {
+  getTodos() {
+    this.todoService.getTodos().subscribe(res => {
       this.todos = res;
     });
   }
 
   addTodoHandler() {
-    this.http
-      .post<BaseResponse<{ item: Todo }>>(
-        environment.url,
-        { title: this.inputValue },
-        this.httpOptions
-      )
-      .subscribe(res => {
-        this.todos.unshift(res.data.item);
-      });
+    this.todoService.createTodo(this.inputValue).subscribe(res => {
+      this.todos.unshift(res.data.item);
+    });
     this.inputValue = '';
   }
 
   deleteHandler(todoId: string) {
-    this.http
-      .delete<BaseResponse>(environment.url + `/${todoId}`, this.httpOptions)
-      .subscribe(res => {
-        console.log(res);
-        this.todos = this.todos.filter(el => el.id !== todoId);
-      });
+    this.todoService.deleteHandler(todoId).subscribe(res => {
+      console.log(res);
+      this.todos = this.todos.filter(el => el.id !== todoId);
+    });
   }
 }
