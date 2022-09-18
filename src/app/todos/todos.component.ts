@@ -9,6 +9,13 @@ interface Todo {
   title: string;
 }
 
+export interface BaseResponse<T = {}> {
+  data: T;
+  messages: string[];
+  fieldsErrors: string[];
+  resultCode: number;
+}
+
 @Component({
   selector: 'ins-todos',
   templateUrl: './todos.component.html',
@@ -16,6 +23,12 @@ interface Todo {
 })
 export class TodosComponent implements OnInit {
   todos: Todo[] = [];
+  httpOptions = {
+    headers: {
+      'api-key': environment.apiKey,
+    },
+    withCredentials: true,
+  };
   inputValue = '';
 
   constructor(private http: HttpClient) {}
@@ -25,24 +38,30 @@ export class TodosComponent implements OnInit {
   }
 
   private getTodos() {
-    this.http
-      .get<Todo[]>(environment.url, {
-        headers: {
-          'api-key': environment.apiKey,
-        },
-        withCredentials: true,
-      })
-      .subscribe(res => {
-        this.todos = res;
-      });
-  }
-
-  deleteHandler(todoId: string) {
-    console.log(todoId);
+    this.http.get<Todo[]>(environment.url, this.httpOptions).subscribe(res => {
+      this.todos = res;
+    });
   }
 
   addTodoHandler() {
-    console.log(this.inputValue);
+    this.http
+      .post<BaseResponse<{ item: Todo }>>(
+        environment.url,
+        { title: this.inputValue },
+        this.httpOptions
+      )
+      .subscribe(res => {
+        this.todos.unshift(res.data.item);
+      });
     this.inputValue = '';
+  }
+
+  deleteHandler(todoId: string) {
+    this.http
+      .delete<BaseResponse>(environment.url + `/${todoId}`, this.httpOptions)
+      .subscribe(res => {
+        console.log(res);
+        this.todos = this.todos.filter(el => el.id !== todoId);
+      });
   }
 }

@@ -4,29 +4,39 @@
   .inputWrapper {
     margin-bottom: 10px;
   }
+  .containerWrapper {
+    columns: 2 260px;
+    column-gap: 10px;
+  }
   .container {
     display: flex;
-    width: 30%;
     font-size: 18px;
     font-weight: bold;
     color: #41096e;
-    justify-content: space-between;
     padding-bottom: 5px;
+    .item {
+      display: flex;
+      flex: 1 1;
+      align-items: baseline;
+      word-break: break-word;
+      &:after {
+        display: inline-block;
+        flex: 1 1;
+        margin-left: 5px;
+        content: '';
+        border-bottom: dotted 1px #ccc;
+      }
+    }
     .buttonWrapper {
       display: flex;
-      align-items: center;
+      align-items: baseline;
       & button {
         color: white;
-        padding: 3px 10px;
         background: #ef5757;
         border: none;
         border-radius: 5px;
+        cursor: pointer;
       }
-    }
-    .item {
-      display: flex;
-      text-align: left;
-      flex-direction: column;
     }
   }
 
@@ -42,8 +52,5 @@
     color: #41096e;
     margin: 0;
     padding: 0;
-  }
-  & span {
-    font-size: 18px;
   }
 }
