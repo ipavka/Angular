@@ -1,17 +1,21 @@
 <div class="todosBlock">
   <h1>ToDo</h1>
-  <div class="inputWrapper">
-    <input type="text" [(ngModel)]="inputValue" />
-    <button (click)="addTodoHandler()">add</button>
-  </div>
-  <div class="containerWrapper">
-    <div *ngFor="let el of todos" class="container">
-      <div class="item">
-        <div>-&nbsp;{{ el.title }}</div>
-      </div>
-      <div class="buttonWrapper">
-        <button (click)="deleteHandler(el.id)">X</button>
+  <h3 *ngIf="!!error; else content" style="color: #ef5757">{{ error }}</h3>
+
+  <ng-template #content>
+    <div class="inputWrapper">
+      <input type="text" [(ngModel)]="inputValue" />
+      <button (click)="addTodoHandler()">add</button>
+    </div>
+    <div class="containerWrapper">
+      <div *ngFor="let el of todos" class="container">
+        <div class="item">
+          <div>-&nbsp;{{ el.title }}</div>
+        </div>
+        <div class="buttonWrapper">
+          <button (click)="deleteHandler(el.id)">X</button>
+        </div>
       </div>
     </div>
-  </div>
+  </ng-template>
 </div>
